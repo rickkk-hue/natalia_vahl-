@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NATALIA VAHL</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
+
 <body>
-
-
   <header>
     <nav>
       <h1 class="logo">Vestidos Únicos</h1>
@@ -23,22 +23,24 @@
       <div class="redes">
         <span>Nuestras redes:</span>
         <a href="https://www.instagram.com/nataliavahlvestidos/" target="_blank"><i class='bx bxl-instagram'></i></a>
-        <a href="#"><i class='bx bxl-whatsapp'></i></a>
+        <a href="https://wa.me/542914640123"><i class='bx bxl-whatsapp'></i></a>
         <a href="https://www.facebook.com/NataliaVahl78/" target="_blank"><i class='bx bxl-facebook'></i></a>
       </div>
     </nav>
 
-   
+
     <div class="info-importante">
       <button class="info-btn" onclick="toggleMenu()">INFORMACIÓN IMPORTANTE</button>
       <div class="info-menu" id="infoMenu">
         <div class="pregunta">
           <h4>¿Con cuánta anticipación puedo encargar un vestido?</h4>
-          <p>El tiempo máximo para encargar tu vestido es de 12 meses antes de la fecha del evento y el tiempo mínimo 3 meses antes de la fecha de tu evento.</p>
+          <p>El tiempo máximo para encargar tu vestido es de 12 meses antes de la fecha del evento y el tiempo mínimo 3
+            meses antes de la fecha de tu evento.</p>
         </div>
         <div class="pregunta">
           <h4>¿Cuáles son las modalidades y medios de pago?</h4>
-          <p>Medios de pago: Efectivo, transferencia bancaria, Mercado Pago y aceptamos todas las tarjetas de crédito.</p>
+          <p>Medios de pago: Efectivo, transferencia bancaria, Mercado Pago y aceptamos todas las tarjetas de crédito.
+          </p>
           <ul>
             <li>En un pago: 13% de descuento con transferencia bancaria o efectivo.</li>
             <li>En un pago o en cuotas con tarjeta de crédito: 14% de recargo + interés.</li>
@@ -53,8 +55,8 @@
 
   <section id="inicio" class="inicio">
     <video autoplay muted loop class="video-fondo">
-      <source src="/img/vid.mp4" type="video/mp4">
-     
+      <source src="./img/vid.mp4" type="video/mp4">
+
     </video>
     <div class="overlay">
       <div>
@@ -64,7 +66,7 @@
     </div>
   </section>
 
- 
+
   <section id="quince" class="seccion">
     <h2>Vestidos de 15 Años</h2>
     <div class="carousel">
@@ -86,7 +88,7 @@
     </div>
   </section>
 
-  
+
   <section id="novias" class="seccion">
     <h2>Vestidos de Novia</h2>
     <div class="carousel">
@@ -104,11 +106,12 @@
     </div>
   </section>
 
- 
+
   <section id="accesorios" class="seccion">
     <h2>Accesorios</h2>
     <div class="carousel">
-      <button class="flecha izquierda" onclick="moverCarrusel('accesorios', -1)"><i class='bx bx-chevron-left'></i></button>
+      <button class="flecha izquierda" onclick="moverCarrusel('accesorios', -1)"><i
+          class='bx bx-chevron-left'></i></button>
       <div class="contenedor-imagenes" id="carrusel-accesorios">
         <img src="img/acc-5.jpeg" alt="Accesorio 5">
         <img src="img/acc-6.jpeg" alt="Accesorio 5">
@@ -118,11 +121,12 @@
         <img src="img/acc-11.jpeg" alt="Accesorio 5">
         <img src="img/acc-12.jpeg" alt="Accesorio 5">
       </div>
-      <button class="flecha derecha" onclick="moverCarrusel('accesorios', 1)"><i class='bx bx-chevron-right'></i></button>
+      <button class="flecha derecha" onclick="moverCarrusel('accesorios', 1)"><i
+          class='bx bx-chevron-right'></i></button>
     </div>
   </section>
 
-  
+
   <section id="registro" class="seccion registro">
     <h2>Registro de Usuario</h2>
     <form id="registroForm" class="form-registro" novalidate>
@@ -166,7 +170,7 @@
     }
 
     window.addEventListener('resize', () => {
-      ['quince','novias','accesorios'].forEach(seccion => {
+      ['quince', 'novias', 'accesorios'].forEach(seccion => {
         const contenedor = document.getElementById(`carrusel-${seccion}`);
         const ancho = contenedor.children[0].offsetWidth;
         contenedor.style.transform = `translateX(${-posiciones[seccion] * ancho}px)`;
@@ -182,25 +186,25 @@
       const email = document.getElementById('email').value.trim();
       const password = document.getElementById('password').value.trim();
 
-      if(!nombre || !email || !password){
+      if (!nombre || !email || !password) {
         mensaje.textContent = "⚠️ Completa todos los campos.";
-        mensaje.style.color="#ffd600";
+        mensaje.style.color = "#ffd600";
         return;
       }
 
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if(!emailRegex.test(email)){
-        mensaje.textContent="⚠️ Ingresá un email válido.";
-        mensaje.style.color="#ffd600";
+      if (!emailRegex.test(email)) {
+        mensaje.textContent = "⚠️ Ingresá un email válido.";
+        mensaje.style.color = "#ffd600";
         return;
       }
-      if(password.length<6){
-        mensaje.textContent="⚠️ La contraseña debe tener al menos 6 caracteres.";
-        mensaje.style.color="#ffd600";
+      if (password.length < 6) {
+        mensaje.textContent = "⚠️ La contraseña debe tener al menos 6 caracteres.";
+        mensaje.style.color = "#ffd600";
         return;
       }
 
-      const usuario = {nombre,email,password,fecha:new Date().toISOString()};
+      const usuario = { nombre, email, password, fecha: new Date().toISOString() };
       let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
       usuarios.push(usuario);
       localStorage.setItem('usuarios', JSON.stringify(usuarios));
@@ -210,5 +214,47 @@
       form.reset();
     });
   </script>
+
+  <footer class="opinion-section">
+    <h2>Dejanos tu opinión</h2>
+    <form id="opinionForm">
+      <label for="nombre">Nombre (opcional):</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+
+      <label for="opinion">Tu opinión:</label>
+      <textarea id="opinion" name="opinion" rows="4" placeholder="Escribí tu comentario..." required></textarea>
+
+      <label for="rating">Calificación:</label>
+      <div class="rating">
+        <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+        <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+        <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+        <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+        <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+      </div>
+
+      <button type="submit">Enviar opinión</button>
+    </form>
+
+    <p class="gracias" style="display:none;">¡Gracias por tu opinión!</p>
+  </footer>
+  <script>
+    const opinionFormElement = document.getElementById('opinionForm');
+
+    opinionFormElement.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nombre = opinionFormElement.nombre.value;
+      const opinion = opinionFormElement.opinion.value;
+      const rating = opinionFormElement.rating.value;
+
+      console.log("Opinión recibida:", { nombre, opinion, rating });
+
+      opinionFormElement.reset();
+      document.querySelector('.gracias').style.display = 'block';
+      setTimeout(() => document.querySelector('.gracias').style.display = 'none', 3000);
+    });
+  </script>
 </body>
+
 </html>
